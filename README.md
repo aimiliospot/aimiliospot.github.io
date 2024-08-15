@@ -12,6 +12,10 @@ The answer to those and more questions can be found in my personal page 😊
 
 [![Tech Stack](https://skillicons.dev/icons?i=js,html,css,bootstrap)](https://skillicons.dev)
 
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
 
 
 
