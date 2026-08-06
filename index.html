@@ -3,310 +3,375 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="./support.js"></script>
+    <title>Aimilios Potoupnis &mdash; Software Engineer</title>
+    <style>
+        /* ponytail: the tokens/classes this page actually uses, lifted verbatim from the
+           "Classical" _ds stylesheet that was never committed. Unused ramps dropped. */
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Lora:wght@400;600&display=swap');
+
+        :root {
+            --color-bg: #f3f2f2;
+            --color-text: #201f1d;
+            --color-accent: #b68235;
+            --color-divider: color-mix(in srgb, #201f1d 16%, transparent);
+            --color-neutral-700: #605d5d;
+            --color-neutral-800: #444141;
+            --color-accent-300: #facb8d;
+            --color-accent-600: #a06f24;
+            --color-accent-700: #7d5411;
+
+            --font-heading: "Cormorant Garamond", system-ui, sans-serif;
+            --font-heading-weight: 600;
+            --font-body: "Lora", system-ui, sans-serif;
+
+            --space-2: 9.2px;
+            --space-3: 13.8px;
+            --space-4: 18.4px;
+            --space-6: 27.6px;
+            --space-8: 36.8px;
+
+            --radius-md: 4px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+            padding: var(--space-3);
+            border-radius: var(--radius-md);
+            background: transparent;
+            border: 1px solid var(--color-divider);
+        }
+
+        .card-kicker {
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+        }
+
+        .card-title {
+            font-family: var(--font-heading);
+            font-weight: var(--font-heading-weight);
+            font-size: 17px;
+            line-height: 1.2;
+        }
+
+        .card-body {
+            margin: 0;
+            font-size: 13px;
+            opacity: 0.8;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            color: color-mix(in srgb, var(--color-text) 50%, transparent);
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            font-size: 11px;
+            letter-spacing: 0.02em;
+            padding: 3px 10px;
+            border-radius: calc(var(--radius-md) * 0.75);
+        }
+
+        .tag-outline {
+            border: 1px solid var(--color-accent);
+            color: var(--color-accent);
+        }
+
+        body {
+            margin: 0;
+            background: var(--color-bg);
+        }
+
+        a {
+            color: var(--color-accent-700);
+            text-decoration: none;
+            border-bottom: 1px solid color-mix(in srgb, var(--color-accent) 45%, transparent);
+        }
+
+        a:hover {
+            color: var(--color-accent-600);
+            border-bottom-color: var(--color-accent);
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        @media (max-width: 860px) {
+            [data-r="hero"], [data-r="row"], [data-r="edu"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            [data-r="hero-aside"] {
+                border-left: none !important;
+                border-top: 1px solid var(--color-divider) !important;
+                padding-left: 0 !important;
+                padding-top: var(--space-6) !important;
+            }
+
+            [data-r="hero"] {
+                padding-top: var(--space-8) !important;
+                gap: var(--space-6) !important;
+            }
+
+            [data-r="row"] {
+                gap: var(--space-4) !important;
+            }
+
+            [data-r="page"] {
+                padding-left: var(--space-4) !important;
+                padding-right: var(--space-4) !important;
+            }
+
+            [data-r="nav"] {
+                gap: var(--space-4) !important;
+                font-size: 12px !important;
+            }
+
+            [data-r="header"] {
+                flex-wrap: wrap !important;
+                gap: var(--space-2) !important;
+            }
+
+            [data-r="footer"] {
+                align-items: flex-start !important;
+            }
+
+            [data-r="role-head"] {
+                font-size: 28px !important;
+            }
+        }
+
+        [data-r="nav"] a:hover {
+            color: var(--color-accent-700) !important;
+        }
+    </style>
 </head>
 <body>
-<x-dc>
-    <helmet>
-        <link rel="stylesheet" href="_ds/classical-0651a943-7c23-4160-9511-fff297496f81/styles.css">
-        <script src="_ds/classical-0651a943-7c23-4160-9511-fff297496f81/_ds_bundle.js"></script>
-        <style>
-            body {
-                margin: 0;
-                background: var(--color-bg);
-            }
 
-            a {
-                color: var(--color-accent-700);
-                text-decoration: none;
-                border-bottom: 1px solid color-mix(in srgb, var(--color-accent) 45%, transparent);
-            }
+<div data-r="page"
+     style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); min-height: 100vh; padding: 0 var(--space-6) var(--space-8);">
 
-            a:hover {
-                color: var(--color-accent-600);
-                border-bottom-color: var(--color-accent);
-            }
+    <header data-r="header"
+            style="max-width: 1000px; margin: 0 auto; display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-6); padding: var(--space-6) 0; border-bottom: 1px solid var(--color-divider);">
+        <span style="font-family: var(--font-heading); font-size: 20px; letter-spacing: 0.14em; text-transform: uppercase;">A. Potoupnis</span>
+        <nav data-r="nav"
+             style="display: flex; gap: var(--space-6); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700);">
+            <a href="#experience" style="border-bottom: none; color: inherit;">Experience</a>
+            <a href="#education" style="border-bottom: none; color: inherit;">Education</a>
+            <a href="mailto:aimiliospot@gmail.com" style="border-bottom: none; color: inherit;">Contact</a>
+        </nav>
+    </header>
 
-            ul {
-                margin: 0;
-                padding: 0;
-                list-style: none;
-            }
+    <section data-r="hero"
+             style="max-width: 1000px; margin: 0 auto; padding: calc(var(--space-8) * 1.6) 0 var(--space-8); display: grid; grid-template-columns: 1.25fr 1fr; gap: calc(var(--space-8) * 1.2); align-items: end;">
+        <div>
+            <p style="margin: 0 0 var(--space-4); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">
+                Software Engineer &middot; Athens, Greece</p>
+            <h1 style="font-family: var(--font-heading); font-weight: 400; font-size: clamp(52px, 7vw, 92px); line-height: 1.02; margin: 0; letter-spacing: -0.01em;">
+                Aimilios<br>Potoupnis</h1>
+        </div>
+        <div data-r="hero-aside"
+             style="border-left: 1px solid var(--color-divider); padding-left: calc(var(--space-8) * 0.8);">
+            <p style="margin: 0; font-size: 17px; line-height: 1.75; text-align: justify; text-wrap: pretty;">
+                Software engineer with 5 years of experience across analytics and development. Builds and owns
+                systems end to end: pipelines, backend services, ML-based tools, and deployment.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); margin-top: var(--space-6); font-size: 14px; color: var(--color-neutral-700); font-feature-settings: 'tnum';">
+                <a href="mailto:aimiliospot@gmail.com">aimiliospot@gmail.com</a>
+                <span>+30 694 593 2282</span>
+                <a href="https://linkedin.com/in/aimiliospotoupnis" target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
+        </div>
+    </section>
 
-            @media (max-width: 860px) {
-                [data-r="hero"], [data-r="row"], [data-r="edu"] {
-                    grid-template-columns: 1fr !important;
-                }
+    <section
+            style="max-width: 1000px; margin: 0 auto; border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); padding: var(--space-4) 0; display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-3);">
+        <span class="tag tag-outline">Python</span>
+        <span class="tag tag-outline">Django REST</span>
+        <span class="tag tag-outline">T-SQL</span>
+        <span class="tag tag-outline">PostgreSQL</span>
+        <span class="tag tag-outline">SQL Server</span>
+        <span class="tag tag-outline">ClickHouse</span>
+        <span class="tag tag-outline">ETL / ELT</span>
+        <span class="tag tag-outline">Machine learning</span>
+        <span class="tag tag-outline">Tableau</span>
+        <span class="tag tag-outline">Vue.js</span>
+        <span class="tag tag-outline">Docker</span>
+        <span class="tag tag-outline">FastMCP</span>
+    </section>
 
-                [data-r="hero-aside"] {
-                    border-left: none !important;
-                    border-top: 1px solid var(--color-divider) !important;
-                    padding-left: 0 !important;
-                    padding-top: var(--space-6) !important;
-                }
+    <section id="experience" style="max-width: 1000px; margin: 0 auto; padding-top: calc(var(--space-8) * 1.4);">
+        <h2 style="font-family: var(--font-heading); font-weight: 600; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; margin: 0 0 var(--space-6); color: var(--color-neutral-700);">
+            Work Experience</h2>
 
-                [data-r="hero"] {
-                    padding-top: var(--space-8) !important;
-                    gap: var(--space-6) !important;
-                }
-
-                [data-r="row"] {
-                    gap: var(--space-4) !important;
-                }
-
-                [data-r="page"] {
-                    padding-left: var(--space-4) !important;
-                    padding-right: var(--space-4) !important;
-                }
-
-                [data-r="nav"] {
-                    gap: var(--space-4) !important;
-                    font-size: 12px !important;
-                }
-
-                [data-r="header"] {
-                    flex-wrap: wrap !important;
-                    gap: var(--space-2) !important;
-                }
-
-                [data-r="footer"] {
-                    align-items: flex-start !important;
-                }
-
-                [data-r="role-head"] {
-                    font-size: 28px !important;
-                }
-            }
-        </style>
-    </helmet>
-
-    <div data-r="page"
-         style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); min-height: 100vh; padding: 0 var(--space-6) var(--space-8);">
-
-        <header data-r="header"
-                style="max-width: 1000px; margin: 0 auto; display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-6); padding: var(--space-6) 0; border-bottom: 1px solid var(--color-divider);">
-            <span style="font-family: var(--font-heading); font-size: 20px; letter-spacing: 0.14em; text-transform: uppercase;">A. Potoupnis</span>
-            <nav data-r="nav"
-                 style="display: flex; gap: var(--space-6); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700);">
-                <a href="#experience" style="border-bottom: none; color: inherit;"
-                   style-hover="color: var(--color-accent-700);">Experience</a>
-                <a href="#education" style="border-bottom: none; color: inherit;"
-                   style-hover="color: var(--color-accent-700);">Education</a>
-                <a href="mailto:aimiliospot@gmail.com" style="border-bottom: none; color: inherit;"
-                   style-hover="color: var(--color-accent-700);">Contact</a>
-            </nav>
-        </header>
-
-        <section data-r="hero"
-                 style="max-width: 1000px; margin: 0 auto; padding: calc(var(--space-8) * 1.6) 0 var(--space-8); display: grid; grid-template-columns: 1.25fr 1fr; gap: calc(var(--space-8) * 1.2); align-items: end;">
+        <article data-r="row"
+                 style="display: grid; grid-template-columns: 220px 1fr; gap: calc(var(--space-8) * 0.9); padding: var(--space-8) 0; border-top: 1px solid var(--color-divider);">
             <div>
-                <p style="margin: 0 0 var(--space-4); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">
-                    Software Engineer &middot; Athens, Greece</p>
-                <h1 style="font-family: var(--font-heading); font-weight: 400; font-size: clamp(52px, 7vw, 92px); line-height: 1.02; margin: 0; letter-spacing: -0.01em;">
-                    Aimilios<br>Potoupnis</h1>
+                <h3 data-r="role-head"
+                    style="font-family: var(--font-heading); font-weight: 400; font-size: 34px; margin: 0 0 var(--space-2); line-height: 1.1;">
+                    Commsquare</h3>
+                <p style="margin: 0; font-size: 14px; color: var(--color-neutral-700); font-feature-settings: 'tnum';">
+                    May 2023 &ndash; Present<br>Remote</p>
             </div>
-            <div data-r="hero-aside"
-                 style="border-left: 1px solid var(--color-divider); padding-left: calc(var(--space-8) * 0.8);">
-                <p style="margin: 0; font-size: 17px; line-height: 1.75; text-align: justify; text-wrap: pretty;">
-                    Software engineer with 5 years of experience across analytics and development. Builds and owns
-                    systems end to end: pipelines, backend services, ML-based tools, and deployment.</p>
-                <div style="display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); margin-top: var(--space-6); font-size: 14px; color: var(--color-neutral-700); font-feature-settings: 'tnum';">
-                    <a href="mailto:aimiliospot@gmail.com">aimiliospot@gmail.com</a>
-                    <span>+30 694 593 2282</span>
-                    <a href="https://linkedin.com/in/aimiliospotoupnis" target="_blank" rel="noreferrer">LinkedIn</a>
-                </div>
+            <div>
+                <p style="margin: 0 0 var(--space-4); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700);">
+                    Analytics Engineer</p>
+                <p style="margin: 0 0 var(--space-6); font-size: 16px; line-height: 1.7; font-style: italic; color: var(--color-neutral-800);">
+                    Commsquare delivers mobile network benchmarking and analytics to telecom operators across
+                    Europe.</p>
+                <ul style="display: grid; gap: var(--space-4); font-size: 15.5px; line-height: 1.7;">
+                    <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
+                        Designed the end-to-end architecture of the company&rsquo;s network benchmarking and
+                        reporting platform, defining the data model, service boundaries, and technology choices
+                        across ingestion, storage, analytics, and presentation layers.
+                    </li>
+                    <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
+                        Built ETL and ELT pipelines in Python and T-SQL that process mobile network benchmarking
+                        test data across test campaigns.
+                    </li>
+                    <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
+                        Built REST APIs with Django REST, enabling full control of the analytics platform from an
+                        internal web application.
+                    </li>
+                    <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
+                        Developed an outlier detection tool applying statistical and ML methods to flag anomalous
+                        measurements in benchmarking data, substantially cutting manual review time.
+                    </li>
+                    <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
+                        Implemented data validation services across the pipelines, eliminating data quality
+                        incidents.
+                    </li>
+                    <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
+                        Built Tableau dashboards that telecom engineers use to surface network performance insights
+                        for customers.
+                    </li>
+                    <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
+                        Built custom MCP tools with FastMCP, allowing AI assistants to connect to production SQL
+                        Server and ClickHouse databases.
+                    </li>
+                </ul>
             </div>
-        </section>
+        </article>
 
-        <sc-if value="{{ showTechIndex }}" hint-placeholder-val="{{ true }}">
-            <section
-                    style="max-width: 1000px; margin: 0 auto; border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); padding: var(--space-4) 0; display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-3);">
-                <span class="tag tag-outline">Python</span>
-                <span class="tag tag-outline">Django REST</span>
-                <span class="tag tag-outline">T-SQL</span>
-                <span class="tag tag-outline">PostgreSQL</span>
-                <span class="tag tag-outline">SQL Server</span>
-                <span class="tag tag-outline">ClickHouse</span>
-                <span class="tag tag-outline">ETL / ELT</span>
-                <span class="tag tag-outline">Machine learning</span>
-                <span class="tag tag-outline">Tableau</span>
-                <span class="tag tag-outline">Vue.js</span>
-                <span class="tag tag-outline">Docker</span>
-                <span class="tag tag-outline">FastMCP</span>
-            </section>
-        </sc-if>
-
-        <section id="experience" style="max-width: 1000px; margin: 0 auto; padding-top: calc(var(--space-8) * 1.4);">
-            <h2 style="font-family: var(--font-heading); font-weight: 600; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; margin: 0 0 var(--space-6); color: var(--color-neutral-700);">
-                Work Experience</h2>
-
-            <article data-r="row"
-                     style="display: grid; grid-template-columns: 220px 1fr; gap: calc(var(--space-8) * 0.9); padding: var(--space-8) 0; border-top: 1px solid var(--color-divider);">
+        <article data-r="row"
+                 style="display: grid; grid-template-columns: 220px 1fr; gap: calc(var(--space-8) * 0.9); padding: var(--space-8) 0; border-top: 1px solid var(--color-divider);">
+            <div>
+                <h3 data-r="role-head"
+                    style="font-family: var(--font-heading); font-weight: 400; font-size: 34px; margin: 0 0 var(--space-2); line-height: 1.1;">
+                    Freelance Software Engineer</h3>
+                <p style="margin: 0; font-size: 14px; color: var(--color-neutral-700); font-feature-settings: 'tnum';">
+                    Jun. 2025 &ndash; Present<br>Independent contractor, 2 clients<br>Remote</p>
+            </div>
+            <div style="display: grid; gap: var(--space-8);">
                 <div>
-                    <h3 data-r="role-head"
-                        style="font-family: var(--font-heading); font-weight: 400; font-size: 34px; margin: 0 0 var(--space-2); line-height: 1.1;">
-                        Commsquare</h3>
-                    <p style="margin: 0; font-size: 14px; color: var(--color-neutral-700); font-feature-settings: 'tnum';">
-                        May 2023 &ndash; Present<br>Remote</p>
-                </div>
-                <div>
-                    <p style="margin: 0 0 var(--space-4); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700);">
-                        Analytics Engineer</p>
-                    <p style="margin: 0 0 var(--space-6); font-size: 16px; line-height: 1.7; font-style: italic; color: var(--color-neutral-800);">
-                        Commsquare delivers mobile network benchmarking and analytics to telecom operators across
-                        Europe.</p>
+                    <p style="margin: 0 0 var(--space-4); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">
+                        Iatriki Praxi IKE &middot; Nov. 2025 &ndash; Present</p>
                     <ul style="display: grid; gap: var(--space-4); font-size: 15.5px; line-height: 1.7;">
                         <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
-                            Designed the end-to-end architecture of the company&rsquo;s network benchmarking and
-                            reporting platform, defining the data model, service boundaries, and technology choices
-                            across ingestion, storage, analytics, and presentation layers.
+                            Architected and delivered the backend of an AI clinical assistant that orchestrates
+                            multiple large language models across the primary care workflow, covering differential
+                            diagnosis, investigation planning, treatment recommendations and prescription support.
                         </li>
                         <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
-                            Built ETL and ELT pipelines in Python and T-SQL that process mobile network benchmarking
-                            test data across test campaigns.
+                            Advised the founder on implementation steps and technology selection, then restructured
+                            an existing proof-of-concept implementation into a maintainable production application.
                         </li>
                         <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
-                            Built REST APIs with Django REST, enabling full control of the analytics platform from an
-                            internal web application.
-                        </li>
-                        <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
-                            Developed an outlier detection tool applying statistical and ML methods to flag anomalous
-                            measurements in benchmarking data, substantially cutting manual review time.
-                        </li>
-                        <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
-                            Implemented data validation services across the pipelines, eliminating data quality
-                            incidents.
-                        </li>
-                        <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
-                            Built Tableau dashboards that telecom engineers use to surface network performance insights
-                            for customers.
-                        </li>
-                        <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
-                            Built custom MCP tools with FastMCP, allowing AI assistants to connect to production SQL
-                            Server and ClickHouse databases.
+                            Built the Django REST backend and PostgreSQL data model, containerized the application
+                            with Docker, and deployed it to an Ubuntu server.
                         </li>
                     </ul>
                 </div>
-            </article>
-
-            <article data-r="row"
-                     style="display: grid; grid-template-columns: 220px 1fr; gap: calc(var(--space-8) * 0.9); padding: var(--space-8) 0; border-top: 1px solid var(--color-divider);">
                 <div>
-                    <h3 data-r="role-head"
-                        style="font-family: var(--font-heading); font-weight: 400; font-size: 34px; margin: 0 0 var(--space-2); line-height: 1.1;">
-                        Freelance Software Engineer</h3>
-                    <p style="margin: 0; font-size: 14px; color: var(--color-neutral-700); font-feature-settings: 'tnum';">
-                        Jun. 2025 &ndash; Present<br>Independent contractor, 2 clients<br>Remote</p>
-                </div>
-                <div style="display: grid; gap: var(--space-8);">
-                    <div>
-                        <p style="margin: 0 0 var(--space-4); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">
-                            Iatriki Praxi IKE &middot; Nov. 2025 &ndash; Present</p>
-                        <ul style="display: grid; gap: var(--space-4); font-size: 15.5px; line-height: 1.7;">
-                            <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
-                                Architected and delivered the backend of an AI clinical assistant that orchestrates
-                                multiple large language models across the primary care workflow, covering differential
-                                diagnosis, investigation planning, treatment recommendations and prescription support.
-                            </li>
-                            <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
-                                Advised the founder on implementation steps and technology selection, then restructured
-                                an existing proof-of-concept implementation into a maintainable production application.
-                            </li>
-                            <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
-                                Built the Django REST backend and PostgreSQL data model, containerized the application
-                                with Docker, and deployed it to an Ubuntu server.
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <p style="margin: 0 0 var(--space-4); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">
-                            Toganidis Tryfon Jewellery &middot; Jun. 2025 &ndash; Jul. 2025</p>
-                        <ul style="display: grid; gap: var(--space-4); font-size: 15.5px; line-height: 1.7;">
-                            <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
-                                Translated the owner&rsquo;s requirements into a feature set and shipped a client and
-                                order management tool.
-                            </li>
-                            <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
-                                Built the application in Vue.js, Django REST, and PostgreSQL, replacing disconnected
-                                spreadsheets with a single system tracking clients and orders while calculating costs
-                                automatically.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-
-            <article data-r="row"
-                     style="display: grid; grid-template-columns: 220px 1fr; gap: calc(var(--space-8) * 0.9); padding: var(--space-8) 0; border-top: 1px solid var(--color-divider);">
-                <div>
-                    <h3 data-r="role-head"
-                        style="font-family: var(--font-heading); font-weight: 400; font-size: 34px; margin: 0 0 var(--space-2); line-height: 1.1;">
-                        Nokia</h3>
-                    <p style="margin: 0; font-size: 14px; color: var(--color-neutral-700); font-feature-settings: 'tnum';">
-                        Jun. 2022 &ndash; May 2023<br>Athens, Greece</p>
-                </div>
-                <div>
-                    <p style="margin: 0 0 var(--space-4); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700);">
-                        Software QA Engineer</p>
+                    <p style="margin: 0 0 var(--space-4); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700); font-feature-settings: 'tnum';">
+                        Toganidis Tryfon Jewellery &middot; Jun. 2025 &ndash; Jul. 2025</p>
                     <ul style="display: grid; gap: var(--space-4); font-size: 15.5px; line-height: 1.7;">
                         <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
-                            Built automated test suites for 5G core network features in Python and Tcl.
+                            Translated the owner&rsquo;s requirements into a feature set and shipped a client and
+                            order management tool.
                         </li>
-                    </ul>
-                </div>
-            </article>
-
-            <article data-r="row"
-                     style="display: grid; grid-template-columns: 220px 1fr; gap: calc(var(--space-8) * 0.9); padding: var(--space-8) 0; border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider);">
-                <div>
-                    <h3 data-r="role-head"
-                        style="font-family: var(--font-heading); font-weight: 400; font-size: 34px; margin: 0 0 var(--space-2); line-height: 1.1;">
-                        Vodafone</h3>
-                    <p style="margin: 0; font-size: 14px; color: var(--color-neutral-700); font-feature-settings: 'tnum';">
-                        Sep. 2021 &ndash; May 2022<br>Athens, Greece</p>
-                </div>
-                <div>
-                    <p style="margin: 0 0 var(--space-4); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700);">
-                        Data Analyst</p>
-                    <ul style="display: grid; gap: var(--space-4); font-size: 15.5px; line-height: 1.7;">
                         <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
-                            Built an ETL pipeline in Python that consumed data from a fixed-line network monitoring
-                            platform and produced recurring reports for upper management.
+                            Built the application in Vue.js, Django REST, and PostgreSQL, replacing disconnected
+                            spreadsheets with a single system tracking clients and orders while calculating costs
+                            automatically.
                         </li>
                     </ul>
-                </div>
-            </article>
-        </section>
-
-        <section id="education" style="max-width: 1000px; margin: 0 auto; padding-top: calc(var(--space-8) * 1.4);">
-            <h2 style="font-family: var(--font-heading); font-weight: 600; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; margin: 0 0 var(--space-6); color: var(--color-neutral-700);">
-                Education</h2>
-            <div data-r="edu" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6);">
-                <div class="card">
-                    <p class="card-kicker" style="font-feature-settings: 'tnum';">Jul. 2024</p>
-                    <h3 class="card-title" style="font-weight: 400;">National Technical University of Athens</h3>
-                    <p class="card-body">M.Sc., Mathematical Modeling in Modern Technologies</p>
-                    <p class="card-meta">Athens, Greece</p>
-                </div>
-                <div class="card">
-                    <p class="card-kicker" style="font-feature-settings: 'tnum';">Mar. 2020</p>
-                    <h3 class="card-title" style="font-weight: 400;">Aristotle University of Thessaloniki</h3>
-                    <p class="card-body">M.Eng., Electrical and Computer Engineering</p>
-                    <p class="card-meta">Thessaloniki, Greece</p>
                 </div>
             </div>
-        </section>
+        </article>
 
-    </div>
+        <article data-r="row"
+                 style="display: grid; grid-template-columns: 220px 1fr; gap: calc(var(--space-8) * 0.9); padding: var(--space-8) 0; border-top: 1px solid var(--color-divider);">
+            <div>
+                <h3 data-r="role-head"
+                    style="font-family: var(--font-heading); font-weight: 400; font-size: 34px; margin: 0 0 var(--space-2); line-height: 1.1;">
+                    Nokia</h3>
+                <p style="margin: 0; font-size: 14px; color: var(--color-neutral-700); font-feature-settings: 'tnum';">
+                    Jun. 2022 &ndash; May 2023<br>Athens, Greece</p>
+            </div>
+            <div>
+                <p style="margin: 0 0 var(--space-4); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700);">
+                    Software QA Engineer</p>
+                <ul style="display: grid; gap: var(--space-4); font-size: 15.5px; line-height: 1.7;">
+                    <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
+                        Built automated test suites for 5G core network features in Python and Tcl.
+                    </li>
+                </ul>
+            </div>
+        </article>
 
-</x-dc>
-<script type="text/x-dc" data-dc-script
-        data-props="{&quot;showTechIndex&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
-    class Component extends DCLogic {
-      renderVals() {
-        return { showTechIndex: this.props.showTechIndex ?? true };
-      }
-    }
-</script>
+        <article data-r="row"
+                 style="display: grid; grid-template-columns: 220px 1fr; gap: calc(var(--space-8) * 0.9); padding: var(--space-8) 0; border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider);">
+            <div>
+                <h3 data-r="role-head"
+                    style="font-family: var(--font-heading); font-weight: 400; font-size: 34px; margin: 0 0 var(--space-2); line-height: 1.1;">
+                    Vodafone</h3>
+                <p style="margin: 0; font-size: 14px; color: var(--color-neutral-700); font-feature-settings: 'tnum';">
+                    Sep. 2021 &ndash; May 2022<br>Athens, Greece</p>
+            </div>
+            <div>
+                <p style="margin: 0 0 var(--space-4); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700);">
+                    Data Analyst</p>
+                <ul style="display: grid; gap: var(--space-4); font-size: 15.5px; line-height: 1.7;">
+                    <li style="padding-left: var(--space-4); border-left: 1px solid var(--color-accent-300); text-wrap: pretty;">
+                        Built an ETL pipeline in Python that consumed data from a fixed-line network monitoring
+                        platform and produced recurring reports for upper management.
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </section>
+
+    <section id="education" style="max-width: 1000px; margin: 0 auto; padding-top: calc(var(--space-8) * 1.4);">
+        <h2 style="font-family: var(--font-heading); font-weight: 600; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; margin: 0 0 var(--space-6); color: var(--color-neutral-700);">
+            Education</h2>
+        <div data-r="edu" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6);">
+            <div class="card">
+                <p class="card-kicker" style="font-feature-settings: 'tnum';">Jul. 2024</p>
+                <h3 class="card-title" style="font-weight: 400;">National Technical University of Athens</h3>
+                <p class="card-body">M.Sc., Mathematical Modeling in Modern Technologies</p>
+                <p class="card-meta">Athens, Greece</p>
+            </div>
+            <div class="card">
+                <p class="card-kicker" style="font-feature-settings: 'tnum';">Mar. 2020</p>
+                <h3 class="card-title" style="font-weight: 400;">Aristotle University of Thessaloniki</h3>
+                <p class="card-body">M.Eng., Electrical and Computer Engineering</p>
+                <p class="card-meta">Thessaloniki, Greece</p>
+            </div>
+        </div>
+    </section>
+
+</div>
 </body>
 </html>
